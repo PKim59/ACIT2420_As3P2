@@ -17,7 +17,7 @@ runcmd:
   - sed -i -e '/^PermitRootLogin/s/^.*$/PermitRootLogin no/' /etc/ssh/sshd_config
   - systemctl restart ssh
   - systemctl restart systemd-journald
-  - sudo mkdir ~/bin
+  - sudo mkdir /home/web/bin
   - sudo mkdir /var/www/my-site
   - sudo ufw default allow outgoing
   - sudo ufw allow ssh

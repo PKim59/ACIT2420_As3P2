@@ -5,9 +5,9 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-User=www-data
+User=web
 Restart=on-failure
-ExecStart=/home/web/bin/hello-server
+ExecStart=/var/www/hello-server
 StandardOutput=append:/var/log/hello-server/backend.log
 StandardError=append:/var/log/hello-server/backend.log
 SyslogIdentifier=hello-server
