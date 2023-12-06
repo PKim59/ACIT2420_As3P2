@@ -6,7 +6,7 @@ users:
     shell: /bin/bash
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     ssh-authorized-keys:
-      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF8phM1DKxRDev84Lo5Vt9LP2uHZJkQDPMTdembidALF pkim59@my.bcit.ca
+      - ssh-ed25519 <placeholder for security reasons, the key is usually like super long. Hi Nathan!> pkim59@my.bcit.ca
 
 packages:
   - nginx
