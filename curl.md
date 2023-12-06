@@ -33,6 +33,12 @@ web2
 curl.exe http://64.227.99.217/hey
 ```
 
+loadbalancer
+```bash
+curl.exe http://146.190.1.145/hey
+```
+
+
 web1
 ```bash
 curl.exe -X POST -H "Content-Type: application/json" -d '{"message":"Hello from your server"}' http://146.190.127.15/echo
@@ -42,4 +48,10 @@ curl.exe -X POST -H "Content-Type: application/json" -d '{"message":"Hello from 
 web2
 ```bash
 curl.exe -X POST -H "Content-Type: application/json" -d '{"message":"Hello from your server"}' http://64.227.99.217/echo
+```
+
+
+loadbalancer
+```bash
+curl.exe -X POST -H "Content-Type: application/json" -d '{"message":"Hello from your server"}' http://146.190.1.145/echo
 ```
