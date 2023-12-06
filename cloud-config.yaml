@@ -1,5 +1,4 @@
 #cloud-config
-# You will need to edit this file before creating your new servers
 users:
   - name: web
     primary_group: web
@@ -10,11 +9,18 @@ users:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF8phM1DKxRDev84Lo5Vt9LP2uHZJkQDPMTdembidALF pkim59@my.bcit.ca
 
 packages:
-  - ripgrep
-  - rsync
+  - nginx
+  - ufw
 
 runcmd:
   - sed -i 's/^#\(Storage=auto\)/\1/' /etc/systemd/journald.conf
   - sed -i -e '/^PermitRootLogin/s/^.*$/PermitRootLogin no/' /etc/ssh/sshd_config
   - systemctl restart ssh
   - systemctl restart systemd-journald
+  - sudo mkdir ~/bin
+  - sudo mkdir /var/www/my-site
+  - sudo ufw default allow outgoing
+  - sudo ufw allow ssh
+  - sudo ufw allow http
+  - sudo ufw enable
+  - sudo unlink /etc/nginx/sites-enabled/default
