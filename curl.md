@@ -6,18 +6,19 @@ Run these commands from your host machine, not your server.
 
 ## Testing your frontend
 
+loadbalancer
 ```bash
-curl http://146.190.12.184
+curl.exe http://146.190.1.145
 ```
 
 ## Testing your backend
 
+loadbalancer/hey
 ```bash
-curl http://146.190.12.184/hey
+curl.exe http://146.190.1.145/hey
 ```
 
+loadbalancer/echo
 ```bash
-curl -X POST -H "Content-Type: application/json" \
-  -d '{"message": "Hello from your server"}' \
-  http://146.190.12.184/echo
+curl.exe -X POST -H "Content-Type: application/json" -d '{"message":"Hello from your server"}' http://146.190.1.145/echo
 ```
